@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -8,26 +6,27 @@ import 'package:bai4/screens/quiz/quiz_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          SvgPicture.asset("assets/icons/bg.svg", fit: BoxFit.fill),
-          SafeArea(
-            child: Padding(
+      body: SingleChildScrollView(
+        child: Stack(
+          children: [
+            SvgPicture.asset("assets/icons/bg.svg", fit: BoxFit.fill),
+            Padding(
               padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Spacer(flex: 2), //2/6
+                  const SizedBox(height: kDefaultPadding * 2), // 2/6
                   Text(
                     "Let's Play Quiz,",
                     style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                         color: Colors.white, fontWeight: FontWeight.bold),
                   ),
                   const Text("Enter your information below"),
-                  const Spacer(), // 1/6
+                  const SizedBox(height: kDefaultPadding), // 1/6
                   const TextField(
                     decoration: InputDecoration(
                       filled: true,
@@ -38,9 +37,9 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const Spacer(), // 1/6
+                  const SizedBox(height: kDefaultPadding), // 1/6
                   InkWell(
-                    onTap: () => Get.to(QuizScreen()),
+                    onTap: () => Get.to(const QuizScreen()),
                     child: Container(
                       width: double.infinity,
                       alignment: Alignment.center,
@@ -50,7 +49,7 @@ class WelcomeScreen extends StatelessWidget {
                         borderRadius: BorderRadius.all(Radius.circular(12)),
                       ),
                       child: Text(
-                        "Lets Start Quiz",
+                        "Let's Start Quiz",
                         style: Theme.of(context)
                             .textTheme
                             .labelLarge
@@ -58,12 +57,12 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const Spacer(flex: 2), // it will take 2/6 spaces
+                  const SizedBox(height: kDefaultPadding * 2), // 2/6
                 ],
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

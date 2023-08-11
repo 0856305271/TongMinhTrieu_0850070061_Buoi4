@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:bai1/constants.dart';
 import 'package:bai1/widgets/bottom_nav_bar.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 //import 'package:daily_exercises_app/widgets/search_bar.dart';
 
 class DetailsScreen extends StatelessWidget {
@@ -41,7 +41,7 @@ class DetailsScreen extends StatelessWidget {
                           ?.copyWith(fontWeight: FontWeight.w900),
                     ),
                     const SizedBox(height: 10),
-                     const Text(
+                    const Text(
                       "3-10 MIN Course",
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
@@ -124,7 +124,8 @@ class DetailsScreen extends StatelessWidget {
                               children: <Widget>[
                                 Text(
                                   "Basic 2",
-                                  style: Theme.of(context).textTheme.titleMedium,
+                                  style:
+                                      Theme.of(context).textTheme.titleMedium,
                                 ),
                                 const Text("Start your deepen you practice")
                               ],
@@ -204,7 +205,7 @@ class SeassionCard extends StatelessWidget {
                     const SizedBox(width: 10),
                     Text(
                       "Session $seassionNum",
-                      style: Theme.of(context).textTheme.titleLarge,
+                      style: Theme.of(context).textTheme.titleSmall,
                     )
                   ],
                 ),
